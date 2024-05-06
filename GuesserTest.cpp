@@ -113,6 +113,11 @@ TEST(GuesserTest, MatchWithWhitespaceSecret) {
     ASSERT_TRUE(g.match("abc def ghi"));
 }
 
+TEST(GuesserTest, MatchWithSmallGuess) {
+    Guesser g("ah");
+    ASSERT_FALSE(g.match("ha"));
+}
+
 TEST(GuesserTest, MatchWithUnicodeCharacters) {
     Guesser g("àbcdefghijklmnopqrstuvwxyz");
     ASSERT_TRUE(g.match("àbcdefghijklmnopqrstuvwxyz"));
